@@ -17,7 +17,7 @@
 - (void)getIntent:(CDVInvokedUrlCommand*)command
 {
     //appDelegates = DELEGATE;
-    appDelegates = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    AppDelegate *appDelegates = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     NSString* result = @"";
     if(appDelegates.message!=NULL){
         result = appDelegates.message;
