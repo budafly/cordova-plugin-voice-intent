@@ -11,6 +11,7 @@
             </feature>
         </config-file>
         <source-file src="src/ios/iOSAndroidIntent.m" />
+        <hook src="hooks/after_platform_add/android_manifest_prepare.js" type="after_prepare" />
     </platform>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
