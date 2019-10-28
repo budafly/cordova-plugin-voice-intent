@@ -18,7 +18,7 @@ AppDelegate *appDelegate; //AppDelegate object to get message value
 {
     appDelegate = DELEGATE;   
     NSString* result = @"";
-    if(appDelegate.message!=NULL){
+    if([appDelegate respondsToSelector:@selector(message)] && appDelegate.message!=NULL){
         result = appDelegate.message;
         appDelegate.message = @"";
     }
