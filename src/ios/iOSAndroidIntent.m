@@ -8,7 +8,7 @@
 @end
 
 @implementation iOSAndroidIntent
-AppDelegate *AppDelegate; //AppDelegate object to get message value
+AppDelegate *appDelegates; //AppDelegate object to get message value
 
 /*
  * Method: used to get SIRI intent
@@ -16,11 +16,11 @@ AppDelegate *AppDelegate; //AppDelegate object to get message value
  */
 - (void)getIntent:(CDVInvokedUrlCommand*)command
 {
-    AppDelegate = DELEGATE;
+    appDelegates = DELEGATE;
     NSString* result = @"";
-    if(AppDelegate.message!=NULL){
-        result = AppDelegate.message;
-        AppDelegate.message = @"";
+    if(appDelegates.message!=NULL){
+        result = appDelegates.message;
+        appDelegates.message = @"";
     }
 
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
