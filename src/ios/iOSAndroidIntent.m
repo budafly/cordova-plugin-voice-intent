@@ -16,7 +16,7 @@ AppDelegate *AppDelegate; //AppDelegate object to get message value
  */
 - (void)getIntent:(CDVInvokedUrlCommand*)command
 {
-    appDelegate = DELEGATE;
+    AppDelegate = DELEGATE;
     NSString* result = @"";
     if(AppDelegate.message!=NULL){
         result = AppDelegate.message;
