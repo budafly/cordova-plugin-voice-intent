@@ -1,6 +1,6 @@
 #import <Cordova/CDV.h>
 #import "AppDelegate.h"
-//#define DELEGATE ((AppDelegate*)[[UIApplication sharedApplication]delegate])
+#define DELEGATE ((AppDelegate*)[[UIApplication sharedApplication]delegate])
 @interface iOSAndroidIntent : CDVPlugin {
   
 }
@@ -8,7 +8,7 @@
 @end
 
 @implementation iOSAndroidIntent
-//AppDelegate *appDelegates; //AppDelegate object to get message value
+AppDelegate *appDelegate; //AppDelegate object to get message value
 
 /*
  * Method: used to get SIRI intent
@@ -16,12 +16,11 @@
  */
 - (void)getIntent:(CDVInvokedUrlCommand*)command
 {
-    //appDelegates = DELEGATE;
-    AppDelegate *appDelegates = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    appDelegate = DELEGATE;   
     NSString* result = @"";
-    if(appDelegates.message!=NULL){
-        result = appDelegates.message;
-        appDelegates.message = @"";
+    if(appDelegate.message!=NULL){
+        result = appDelegate.message;
+        appDelegate.message = @"";
     }
 
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
