@@ -8,7 +8,7 @@
 @end
 
 @implementation iOSAndroidIntent
-AppDelegate *appDelegate; //AppDelegate object to get message value
+AppDelegate*appDelegate; //AppDelegate object to get message value
 
 /*
  * Method: used to get SIRI intent
